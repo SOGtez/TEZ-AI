@@ -4,6 +4,7 @@ import { ErrorMessage } from '~/components/Auth/ErrorMessage';
 import { TranslationKeys, useLocalize } from '~/hooks';
 import SocialLoginRender from './SocialLoginRender';
 import { BlinkAnimation } from './BlinkAnimation';
+import TezLogo from '~/components/Branding/TezLogo';
 import { Banner } from '../Banners';
 import Footer from './Footer';
 
@@ -60,12 +61,8 @@ function AuthLayout({
     <div className="relative flex min-h-screen flex-col bg-white dark:bg-gray-900">
       <Banner />
       <BlinkAnimation active={isFetching}>
-        <div className="mt-6 h-10 w-full bg-cover">
-          <img
-            src="assets/logo.svg"
-            className="h-full w-full object-contain"
-            alt={localize('com_ui_logo', { 0: startupConfig?.appTitle ?? 'LibreChat' })}
-          />
+        <div className="absolute left-1/2 top-[22%] flex -translate-x-1/2 -translate-y-1/2 items-center justify-center">
+          <TezLogo className="text-7xl" />
         </div>
       </BlinkAnimation>
       <DisplayError />
